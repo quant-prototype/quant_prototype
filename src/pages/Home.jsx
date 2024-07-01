@@ -1,9 +1,10 @@
-
+import AddWithRadar from "./SinglePay/AddWithRadar/AddWithRadar";
 
 export default function Home() {
   return (
     <div>
-      hello world
+      {/* hello world */}
+      <AddWithRadar />
     </div>
   )
 }
