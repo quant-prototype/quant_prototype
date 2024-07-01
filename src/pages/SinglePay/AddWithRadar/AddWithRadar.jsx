@@ -4,7 +4,9 @@ import Main from './Main'
 
 function AddWithRadar(){
     return (
+        <div style={{height: '100%'}}>
         <Layout content={(<Main />)} />
+        </div>
     )
 }
 
