@@ -5,11 +5,11 @@ import Home from "./pages/Home";
 
 const Wrapper = styled.div`
   margin: 0 auto; /* 가운데 정렬 */
-  min-width: 100%; /* 전체 너비 */
+  min-width: 430px; /* 전체 너비 */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: #F3F4F7;
   position: relative;
 `;
 
