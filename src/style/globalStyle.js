@@ -11,7 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
     background-color: "#486455";
-    color: white;
   }
 
   body, html {
