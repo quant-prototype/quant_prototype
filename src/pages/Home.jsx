@@ -247,7 +247,7 @@ function Home() {
                 <GroupName>어니스트 섀클턴</GroupName>
                 <GroupCnt>4명</GroupCnt>
               </GroupContentContainer>
-              <StandardButton title='정산하기' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' onClick={handleGroupButtonClick}/>
+              <StandardButton title='정산' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px' onClick={handleGroupButtonClick}/>
             </GroupContent>
 
             <GroupContent style={{width: "93px", borderTopRightRadius:"0px", borderBottomRightRadius:"0px"}}>
@@ -267,7 +267,7 @@ function Home() {
             <SpendTitle>6월에 김하나님이 정산으로 사용한 돈이에요.</SpendTitle>
             <Money>292,033 원</Money>
           </DetailContainer>
-          <StandardButton title='내역' backgroundColor='#B4B4E7' color='black' width='43px' height='24px'/>
+          <StandardButton title='내역' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px'/>
         </SpendContent>
 
         <PlusButton src={plusButton} onClick={handlePlusButtonClick}/>
