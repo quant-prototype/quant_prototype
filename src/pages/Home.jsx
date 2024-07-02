@@ -256,7 +256,7 @@ function Home() {
 
             <GroupContent style={{width: "93px", borderTopRightRadius:"0px", borderBottomRightRadius:"0px"}}>
               <GroupContentContainer style = {{width: '95px'}}>
-                <GroupName>섀클턴</GroupName>
+                <GroupName>동창회</GroupName>
                 <GroupCnt>4명</GroupCnt>
               </GroupContentContainer>
             </GroupContent>
