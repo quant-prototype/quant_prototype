@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import statusBar from '../assets/statusBar.png'
-import indicator from '../assets/indicator.png'
+import statusBar from '../assets/statusBar.svg'
+import indicator from '../assets/indicator.svg'
 
 const ImageWrapper = styled.div`
 width: 430px;

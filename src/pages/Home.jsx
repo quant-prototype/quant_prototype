@@ -1,7 +1,7 @@
 
 import React from 'react';
 import statusBar from '../assets/whiteStatusBar.svg';
-import indicator from '../assets/indicator.png';
+import indicator from '../assets/indicator.svg';
 import styled from 'styled-components';
 import logo from '../assets/logoQuant.svg';
 import alert from '../assets/alert.png';
