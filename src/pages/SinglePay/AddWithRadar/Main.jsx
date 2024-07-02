@@ -5,7 +5,7 @@ import { styled, keyframes } from 'styled-components'
 import StandardButton from '../../../shared/StandardButton'
 import HeaderComponent from '../../PayConfirmProcedure/PayConfirmComponent/HeaderComponent'
 import profileClicked from '../../../assets/profileClicked.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const borderColorAnimation = keyframes`
@@ -19,6 +19,7 @@ const borderColorAnimation = keyframes`
     border-color: #9f9f9f;
   }
 `
+
 
 const Center = styled.div`
 width: 100%;
@@ -105,9 +106,32 @@ cursor: Pointer;
 
 function Main(){
 
+    const [after1000ms, setAfter1000ms] = useState(false)
+    const [after1200ms, setAfter1200ms] = useState(false)
+    const [after1500ms, setAfter1500ms] = useState(false)
+    const [after2000ms, setAfter2000ms] = useState(false)
     const navigate = useNavigate();
     const handleButtonClick = () => {navigate('/confirmmember')};
     const handleBackButtonClick = () => {navigate('/')};
+
+    useEffect(()=>{
+
+        setTimeout(() => {
+            setAfter1000ms(true)
+        }, 1000);
+
+        setTimeout(() => {
+            setAfter1200ms(true)
+        }, 1200);
+
+        setTimeout(() => {
+            setAfter1500ms(true)
+        }, 1500);
+
+        setTimeout(() => {
+            setAfter2000ms(true)
+        }, 2000);
+    }, [])
 
     return(
         <>
@@ -116,17 +140,17 @@ function Main(){
             <RadarLayout>
                 {/* <BigCircle> */}
                     <MiddleCircle>
-                    
-                    <ProfileContainer name='김x우' top='-20px' left= '90px '/>
+                    {after2000ms && <ProfileContainer name='김x우' top='-20px' left= '90px'/>}
 
                         <SmallCircle>
-                            <ProfileContainer name='이x은' top='-10px' left= '20px '/>
-                            <ProfileContainer name='김x은' top='-40px' left= '2o155px '/>
-                            <ProfileContainer name='박x준' top='100px' left= '210px '/>
+                            {after1000ms && <ProfileContainer name='이x은' top='-10px' left= '20px '/>}
+                            {after1200ms && <ProfileContainer name='김x은' top='-40px' left= '2o155px '/>}
+                            {after1500ms && <ProfileContainer name='박x준' top='100px' left= '210px '/> }
 
                             <img src={logoForRadar}></img>
 
                         </SmallCircle>
+
                 </MiddleCircle>
             {/* </BigCircle> */}
             </RadarLayout>
