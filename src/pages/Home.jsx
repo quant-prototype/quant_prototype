@@ -249,7 +249,7 @@ function Home() {
             <GroupContent>
               <GroupContentContainer>
                 <GroupName>배드민턴 동아리</GroupName>
-                <GroupCnt>4명</GroupCnt>
+                <GroupCnt>10명</GroupCnt>
               </GroupContentContainer>
               <Space><StandardButton title='정산' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px' onClick={handleGroupButtonClick}/></Space>
             </GroupContent>
