@@ -1,4 +1,4 @@
-import './css/StandardButton.css'
+import './StandardButton.css'
 
 function StandardButton({title, backgroundColor='blue', color='white', onClick, width='100%', height= '100%'}){
     return(
