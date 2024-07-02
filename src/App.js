@@ -6,6 +6,7 @@ import ConfirmMember from "./pages/PayConfirmProcedure/ConfirmMember/ConfirmMemb
 import QRPay from "./pages/QRpay/QRPay";
 import PayComplete from "./pages/PayComplete/PayComplete";
 import AddWithRadar from "./pages/SinglePay/AddWithRadar/AddWithRadar";
+import GroupPay from "./pages/MultiplePay/GroupMoney/AskGroupMoney";
 
 const Wrapper = styled.div`
   margin: 0 auto; 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/pay" element={<QRPay />} />
           <Route path="/payComplete" element={<PayComplete />} />
           <Route path="/radar" element={<AddWithRadar/>}/>
+          <Route path="/askGroupPay" element={<GroupPay/>}/>
         </Routes>
       </Wrapper>
     </>
