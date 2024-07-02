@@ -19,7 +19,7 @@ const SelectAllButton = styled.button`
 `;
 
 const GroupContainer = styled.div`
-  height: 250px;
+  height: 370px;
   overflow: scroll;
   margin-top: 12px;
 `;
@@ -33,6 +33,8 @@ const ButtonContainer = styled.div`
 `;
 
 export default function SelectGroupMemberComponent() {
+  const navigate=useNavigate();
+
   const [profileInfo, setProfileInfo] = useState([
     {
       name: "너하나",
@@ -95,10 +97,8 @@ export default function SelectGroupMemberComponent() {
     );
   };
 
-  const navigate = useNavigate();
-
   const checkGroumMoneyHandler = () => {
-    navigate("/");
+    navigate("/askGroupPay");
   }
 
   return (
@@ -120,7 +120,7 @@ export default function SelectGroupMemberComponent() {
         })}
       </GroupContainer>
       <ButtonContainer>
-        <StandardButton title="결제하기" width={347} height={64} backgroundColor="white" color="black" />
+        <StandardButton title="결제하기" width={347} height={64} backgroundColor="white" color="black" onClick={checkGroumMoneyHandler}/>
       </ButtonContainer>
     </>
   );

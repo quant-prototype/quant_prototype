@@ -215,6 +215,9 @@ function Home() {
   const handlePlusButtonClick = () => {
     navigate('/Radar');
   };
+  const handleGroupButtonClick = () => {
+    navigate('/selectGroupMember');
+  };
 
   return(
     <>
@@ -244,7 +247,7 @@ function Home() {
                 <GroupName>어니스트 섀클턴</GroupName>
                 <GroupCnt>4명</GroupCnt>
               </GroupContentContainer>
-              <StandardButton title='정산하기' backgroundColor='#B4B4E7' color='black' width='43px' height='24px'/>
+              <StandardButton title='정산하기' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' onClick={handleGroupButtonClick}/>
             </GroupContent>
 
             <GroupContent style={{width: "93px", borderTopRightRadius:"0px", borderBottomRightRadius:"0px"}}>

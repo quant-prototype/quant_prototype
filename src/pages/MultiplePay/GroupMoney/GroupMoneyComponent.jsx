@@ -32,15 +32,17 @@ position: fixed;
 function GroupPayComponent(){
 
     const navigate = useNavigate();
-    const handleFalseButtonClick=()=>{navigate('/pay')}
+    const handleFalseButtonClick = () => {navigate('/groupQr')}
+    const handleTrueButtonClick=()=>{navigate('/')}
+    const handleBackButtonClick=()=>(navigate('/'))
 
   return(
     <>
-        <HeaderComponent/>
+        <HeaderComponent back={handleBackButtonClick}/>
         <Title>우리 동아리 회비를<br/>사용하시겠습니까?</Title>
         <PositionBox>
             <ButtonBox>
-            <StandardButton title="사용하기" backgroundColor="#191970" color="#FFFFFF" height="64px"/>
+            <StandardButton title="사용하기" backgroundColor="#191970" color="#FFFFFF" height="64px" onClick={handleTrueButtonClick}/>
             <StandardButton title="사용하지 않기" backgroundColor="white" color="black" height="64px" onClick={handleFalseButtonClick}/>
             </ButtonBox>
         </PositionBox>
