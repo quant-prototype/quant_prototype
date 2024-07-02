@@ -5,7 +5,9 @@ import indicator from '../assets/indicator.svg'
 const ImageWrapper = styled.div`
 width: 430px;
 height: auto;
-object-fit:contain
+object-fit:contain;
+z-index: 10;
+background: #F3F4F7;
 `
 
 const IndicatorWrapper = styled.div`

@@ -3,12 +3,12 @@ import styled from "styled-components"
 
 const PayCompleteText = styled.p`
   font-size: 25px;
-  font-weight: SemiBold;
+  font-weight: Bold;
   font-family: "Pretendard", sans-serif;
   color: black;
-  line-height: 24.5px;
+  line-height: 1.4;
   text-align: center;
-  margin-top: 110px;
+  margin-top: 150px;
 `
 
 export default function PayAmountComponent({payAmount, memberCount}) {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import notificationImg from "../../assets/Notification.png";
+import notificationImg from "../../assets/Notification.svg";
 import PayAmountComponent from "./PayAmountComponent";
 import StandardButton from "../../shared/StandardButton";
 import { useEffect, useState } from "react";
@@ -13,24 +13,40 @@ const ButtonContainer = styled.div`
   gap: 14px;
 `;
 
+const NotificationContent = styled.img`
+  background: #dddfdf;
+  border-radius : 26px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: fixed;
+  top: ${(props) => (props.visible ? "65px" : "-100px")};
+  left: 49.4%;
+  transform: translateX(-50%);
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+`
+
 export default function PayCompleteComponent() {
-  const [showQR, setShowQR] = useState(true);
+
+  const [isNotificationVisible, setNotificationVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowQR(false);
-    }, 3000);
+      setNotificationVisible(true);
+    }, 1000); 
 
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   return (
-    <>
-      {showQR ? (
-        <QRPay />
-      ) : (
         <>
-          <img src={notificationImg} alt="notificationImg" />
+          <NotificationContent
+        src={notificationImg}
+        alt="Notification"
+        visible={isNotificationVisible}
+      />
           <PayAmountComponent payAmount={40000} memberCount={4} />
           <ButtonContainer>
             <StandardButton
@@ -40,8 +56,6 @@ export default function PayCompleteComponent() {
               backgroundColor="#191970"
             />
           </ButtonContainer>
-        </>
-      )}
     </>
   );
 }

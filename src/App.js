@@ -4,7 +4,6 @@ import { GlobalStyle } from "./style/globalStyle";
 import Home from "./pages/Home";
 import ConfirmMember from "./pages/PayConfirmProcedure/ConfirmMember/ConfirmMember";
 import QRPay from "./pages/QRpay/QRPay";
-import Complete from "./pages/SinglePay/Complete";
 import PayComplete from "./pages/PayComplete/PayComplete";
 
 const Wrapper = styled.div`
@@ -26,7 +25,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/confirmMember" element={<ConfirmMember />} />
           <Route path="/pay" element={<QRPay />} />
-          <Route path="/complete" element={<Complete/>}/>
           <Route path="/payComplete" element={<PayComplete />} />
         </Routes>
       </Wrapper>
