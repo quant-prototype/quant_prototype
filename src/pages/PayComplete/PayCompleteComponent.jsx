@@ -3,7 +3,6 @@ import notificationImg from "../../assets/Notification.svg";
 import PayAmountComponent from "./PayAmountComponent";
 import StandardButton from "../../shared/StandardButton";
 import { useEffect, useState } from "react";
-import QRPay from "../QRpay/QRPay";
 
 const ButtonContainer = styled.div`
   position: fixed;

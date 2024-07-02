@@ -1,7 +1,12 @@
-import QRPayImg from "../../assets/QRPay.png";
+import Layout from "../../shared/Layout";
+import QRPayComponent from './QRPayComponent';
 
-export default function QRPay() {
-  return (
-    <img src={QRPayImg} alt="QRPayImg" />
-  )
+function QRPay(){
+  return(
+    <>
+      <Layout content={<QRPayComponent />} />
+    </>
+  );
 }
+
+export default QRPay;
