@@ -110,9 +110,11 @@ function Main(){
     const [after1200ms, setAfter1200ms] = useState(false)
     const [after1500ms, setAfter1500ms] = useState(false)
     const [after2000ms, setAfter2000ms] = useState(false)
+    const [isProfileClicked, setIsProfileClicked] = useState(false)
     const navigate = useNavigate();
     const handleButtonClick = () => {navigate('/confirmmember')};
     const handleBackButtonClick = () => {navigate('/')};
+    
 
     useEffect(()=>{
 
@@ -140,12 +142,12 @@ function Main(){
             <RadarLayout>
                 {/* <BigCircle> */}
                     <MiddleCircle>
-                    {after2000ms && <ProfileContainer name='김x우' top='-20px' left= '90px'/>}
+                    {after2000ms && <ProfileContainer name='김x우' top='-20px' left= '90px' changeBtnColor={setIsProfileClicked} />}
 
                         <SmallCircle>
-                            {after1000ms && <ProfileContainer name='이x은' top='-10px' left= '20px '/>}
-                            {after1200ms && <ProfileContainer name='김x은' top='-40px' left= '2o155px '/>}
-                            {after1500ms && <ProfileContainer name='박x준' top='100px' left= '210px '/> }
+                            {after1000ms && <ProfileContainer name='이x은' top='-10px' left= '20px' changeBtnColor={setIsProfileClicked}/>}
+                            {after1200ms && <ProfileContainer name='김x은' top='-40px' left= '2o155px ' changeBtnColor={setIsProfileClicked} />}
+                            {after1500ms && <ProfileContainer name='박x준' top='100px' left= '210px ' changeBtnColor={setIsProfileClicked} /> }
 
                             <img src={logoForRadar}></img>
 
@@ -160,8 +162,8 @@ function Main(){
         <Center>
             <SubTitle>추가되지 않은 인원이 있어요</SubTitle>
         
-            <StandardButton title='선택 인원 추가하기' height='64px' width='384px' backgroundColor = 'white' color = 'black' onClick={handleButtonClick} />
-        </Center>   
+            <StandardButton title='선택 인원 추가하기' height='64px' width='384px' backgroundColor = {isProfileClicked ? '#191970': 'white'} color = {isProfileClicked ? 'white': 'black'} onClick={handleButtonClick} />
+        </Center>
 
         </>
     )
@@ -169,7 +171,7 @@ function Main(){
 
 export default Main;
 
-function ProfileContainer ({name, top, left}){
+function ProfileContainer ({name, top, left, changeBtnColor}){
 
     const [isClicked, setIsClicked] = useState(false)
 
@@ -179,6 +181,7 @@ function ProfileContainer ({name, top, left}){
             setIsClicked(false)
         }else{
             setIsClicked(true)
+            changeBtnColor(true)
         }
     }}>
         <Name>{name}</Name>
