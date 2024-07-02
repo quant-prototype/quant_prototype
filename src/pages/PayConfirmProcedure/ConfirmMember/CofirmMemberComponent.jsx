@@ -118,6 +118,10 @@ export default function ConfirmMemberComponent() {
     }
   }
 
+  const goToAddMemberByPhoneNumber = () => {
+    navigate("/addMemberByPhoneNumber");
+  }
+
   return (
     <>
       <HeaderComponent title="아래의 인원이 맞나요?" back={goBackHandler} />
@@ -131,7 +135,7 @@ export default function ConfirmMemberComponent() {
         );
       })}
       <ButtonContainer>
-        <AddMoreMemberText>추가되지 않은 인원이 있어요</AddMoreMemberText>
+        <AddMoreMemberText onClick={goToAddMemberByPhoneNumber}>추가되지 않은 인원이 있어요</AddMoreMemberText>
         <ButtonBox>
           <StandardButton title="결제하기" backgroundColor="white" color="black" onClick={goToPayHandler} />
           <StandardButton title="선택 인원 삭제하기" backgroundColor="white" color="black" onClick={deleteMemberHandler} />
