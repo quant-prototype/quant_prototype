@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ConfirmMember from "./pages/PayConfirmProcedure/ConfirmMember/ConfirmMember";
 import QRPay from "./pages/QRpay/QRPay";
 import Complete from "./pages/SinglePay/Complete";
+import PayComplete from "./pages/PayComplete/PayComplete";
 
 const Wrapper = styled.div`
   margin: 0 auto; /* 가운데 정렬 */
@@ -26,6 +27,7 @@ function App() {
           <Route path="/confirmMember" element={<ConfirmMember />} />
           <Route path="/pay" element={<QRPay />} />
           <Route path="/complete" element={<Complete/>}/>
+          <Route path="/payComplete" element={<PayComplete />} />
         </Routes>
       </Wrapper>
     </>
