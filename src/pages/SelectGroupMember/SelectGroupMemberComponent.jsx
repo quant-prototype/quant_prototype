@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HeaderComponent from "../PayConfirmProcedure/PayConfirmComponent/HeaderComponent";
 import ProfileInfo from "../PayConfirmProcedure/PayConfirmComponent/ProfileInfo";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StandardButton from "../../shared/StandardButton";
 import { useNavigate } from "react-router-dom";
 
@@ -35,6 +35,7 @@ const ButtonContainer = styled.div`
 export default function SelectGroupMemberComponent() {
   const navigate=useNavigate();
 
+  const [isActive, setIsActive] = useState(false);
   const [profileInfo, setProfileInfo] = useState([
     {
       name: "너하나",
@@ -97,6 +98,14 @@ export default function SelectGroupMemberComponent() {
     );
   };
 
+  useEffect(() => {
+    if(profileInfo.some(info => info.selected ===  true)) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [profileInfo])
+
   const checkGroumMoneyHandler = () => {
     navigate("/askGroupPay");
   }
@@ -120,7 +129,7 @@ export default function SelectGroupMemberComponent() {
         })}
       </GroupContainer>
       <ButtonContainer>
-        <StandardButton title="결제하기" width={347} height={64} backgroundColor="white" color="black" onClick={checkGroumMoneyHandler}/>
+        <StandardButton title="결제하기" width={347} height={64} backgroundColor={isActive ? "#191970" : "white"} color={isActive ? "white" : "black"} onClick={checkGroumMoneyHandler}/>
       </ButtonContainer>
     </>
   );

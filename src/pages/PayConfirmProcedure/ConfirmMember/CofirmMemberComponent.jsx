@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import StandardButton from "../../../shared/StandardButton.jsx";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeaderComponent from "../PayConfirmComponent/HeaderComponent.jsx";
 import ProfileInfo from "../PayConfirmComponent/ProfileInfo.jsx";
 
@@ -82,6 +82,8 @@ export default function ConfirmMemberComponent() {
     }
   ]);
 
+  const [isActive, setIsActive] = useState(false);
+
   const selectHandler = (index) => {
     setProfileInfo((prevProfileInfo) => {
       return prevProfileInfo.map((info, infoIndex) => {
@@ -99,12 +101,13 @@ export default function ConfirmMemberComponent() {
     );
   }
 
-  const deleteMemberHandler = () => {
-    setProfileInfo((prevInfo) => {
-      return prevInfo.filter((info) => info.selected !== true);
-    })
-  }
-
+  useEffect(() => {
+    if (profileInfo.some(info => info.selected)) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [profileInfo]);
 
   const navigate = useNavigate();
 
@@ -137,8 +140,7 @@ export default function ConfirmMemberComponent() {
       <ButtonContainer>
         <AddMoreMemberText onClick={goToAddMemberByPhoneNumber}>추가되지 않은 인원이 있어요</AddMoreMemberText>
         <ButtonBox>
-          <StandardButton title="결제하기" backgroundColor="white" color="black" onClick={goToPayHandler} />
-          <StandardButton title="선택 인원 삭제하기" backgroundColor="white" color="black" onClick={deleteMemberHandler} />
+          <StandardButton title="결제하기" backgroundColor={isActive ? "#191970" : "white"} color={isActive ? "white" : "black"} onClick={goToPayHandler} height={64} />
         </ButtonBox>
       </ButtonContainer>
     </>

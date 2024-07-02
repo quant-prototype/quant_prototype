@@ -2,7 +2,7 @@ import styled from "styled-components";
 import HeaderComponent from "../PayConfirmProcedure/PayConfirmComponent/HeaderComponent";
 import ProfileInfo from "../PayConfirmProcedure/PayConfirmComponent/ProfileInfo";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StandardButton from "../../shared/StandardButton";
 
 const NumberInputContainer = styled.div`
@@ -90,6 +90,7 @@ const ButtonContainer = styled.div`
 
 export default function AddMemberByPhoneNumberComponent() {
   const [phoneNumber, setPhoneNumber] = useState({ part2: "", part3: "" });
+  const [isActive, setIsActive] = useState(false);
 
   const [profileInfo, setProfileInfo] = useState([
     {
@@ -130,6 +131,14 @@ export default function AddMemberByPhoneNumberComponent() {
       });
     });
   };
+
+  useEffect(() => {
+    if (profileInfo.some(info => info.selected)) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [profileInfo]);
 
   const navigate = useNavigate();
 
@@ -186,8 +195,8 @@ export default function AddMemberByPhoneNumberComponent() {
           title="추가하기"
           width={347}
           height={64}
-          backgroundColor="white"
-          color="black"
+          backgroundColor={isActive ? "#191970" : "white"} 
+          color={isActive ? "white" : "black"}
           onClick={addMemberHandler}
         />
       </ButtonContainer>
