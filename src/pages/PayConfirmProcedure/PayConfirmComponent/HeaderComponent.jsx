@@ -6,6 +6,7 @@ const BackButton = styled.img`
   margin-left: 43px;
   width: 21px;
   height: 18.38px;
+  cursor: pointer;
 `;
 
 const TitleText = styled.p`
