@@ -30,7 +30,7 @@ bottom: 46px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 23px;
+gap: 11.5px;
 `
 
 const TopLayout = styled.div`
@@ -104,6 +104,14 @@ margin-top: 27px;
 cursor: Pointer;
 `
 
+const SubLine = styled.div`
+height: 0.6px;
+width: 182px;
+background-color: #A8A8A8;
+position: relative;
+top:-8.5px;
+`
+
 function Main(){
 
     const [after1000ms, setAfter1000ms] = useState(false)
@@ -161,6 +169,7 @@ function Main(){
 
         <Center>
             <SubTitle>추가되지 않은 인원이 있어요</SubTitle>
+            <SubLine />
         
             <StandardButton title='선택 인원 추가하기' height='64px' width='384px' backgroundColor = {isProfileClicked ? '#191970': 'white'} color = {isProfileClicked ? 'white': 'black'} onClick={handleButtonClick} />
         </Center>

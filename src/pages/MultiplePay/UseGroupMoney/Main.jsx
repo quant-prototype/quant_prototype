@@ -112,7 +112,8 @@ function Main (){
         <div style={{
           position: 'fixed',
           bottom: '46px',
-          left: '509px'
+          left: '50%',
+          transform: 'translate(-50%, 0)'
         }}>
         <StandardButton title='결제하기' height='64px' width='347px' backgroundColor = {targetText !== '' ? '#191970': 'white'} color = {targetText !== '' ? 'white': 'black'} onClick={handleButtonClick} />
         </div>
