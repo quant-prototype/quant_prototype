@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import keyPad from '../../assets/keyPad.svg';
 import StandardButton from '../../shared/StandardButton';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ImageWrapper = styled.div`
 width: 430px;
@@ -83,12 +84,13 @@ const ButtonContainer = styled.div`
 `
 
 function GroupPw(){
-
+  const navigate = useNavigate();
+  const handleNavigate=()=>{navigate('/useGroupMoney')};
   const [activeDots, setActiveDots] = useState([false, false, false, false]);
   const handleKeypadClick = () => {
     setActiveDots((prev) => {
       const nextIndex = prev.findIndex(dot => dot === false);
-      if (nextIndex === -1) return [false, false, false, false]; // reset if all dots are active
+      if (nextIndex === -1) return [false, false, false, false]; 
       return prev.map((dot, index) => index === nextIndex ? true : dot);
     });
   };
@@ -109,7 +111,7 @@ function GroupPw(){
 
       <KeyPad src={keyPad} onClick={handleKeypadClick}/>
       <ButtonContainer>
-      <StandardButton title="입력하기" backgroundColor="#D9D9D9" color="black" height="64px" width="360px" style={{marginLeft:"34px"}}/>
+      <StandardButton title="입력하기" backgroundColor="#D9D9D9" color="black" height="64px" width="360px" onClick={handleNavigate} style={{marginLeft:"34px"}}/>
       </ButtonContainer>
 
     </ComponentContainer>

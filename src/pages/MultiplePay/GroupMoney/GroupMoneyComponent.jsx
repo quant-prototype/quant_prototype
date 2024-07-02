@@ -34,8 +34,8 @@ function GroupPayComponent(){
 
     const navigate = useNavigate();
     const handleFalseButtonClick = () => {navigate('/groupQr')}
-    const handleTrueButtonClick=()=>{navigate('/useGroupMoney')}
-    const handleBackButtonClick=()=>(navigate('/selectGroupMember'))
+    const handleTrueButtonClick=()=>{navigate('/groupPw')}
+    const handleBackButtonClick=()=>{navigate('/selectGroupMember')}
 
   return(
     <PageWrapper>

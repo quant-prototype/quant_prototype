@@ -13,6 +13,7 @@ import SelectGroupMember from "./pages/SelectGroupMember/SelectGroupMember";
 import GroupPayComplete from "./pages/MultiplePay/GroupMoney/GroupComplete/PayComplete";
 import UseGroupMoney from "./pages/MultiplePay/UseGroupMoney/UseGroupMoney";
 import { AnimatePresence } from "framer-motion";
+import GroupPw from "./pages/MultiplePay/CheckWithPhone";
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -45,6 +46,7 @@ function App() {
             <Route path="/askGroupPay" element={<AskGroupPay />} />
             <Route path="/groupQr" element={<GroupQRPay />} />
             <Route path="groupPayComplete" element={<GroupPayComplete />} />
+            <Route path="groupPw" element={<GroupPw/>}/>
           </Routes>
         </Wrapper>
       </AnimatePresence>
