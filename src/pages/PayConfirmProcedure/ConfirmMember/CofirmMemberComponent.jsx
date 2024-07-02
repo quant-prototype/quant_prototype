@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HeaderComponent from "../PayConfirmComponent/HeaderComponent.jsx";
 import ProfileInfo from "../PayConfirmComponent/ProfileInfo.jsx";
+import PageWrapper from "../../../style/PageWrapper.jsx";
 
 const MemberCountContainer = styled.div`
   display: flex;
@@ -126,7 +127,7 @@ export default function ConfirmMemberComponent() {
   }
 
   return (
-    <>
+    <PageWrapper>
       <HeaderComponent title="아래의 인원이 맞나요?" back={goBackHandler} />
       <MemberCountContainer>
         <MemberCountText>총 {profileInfo.length}명</MemberCountText>
@@ -143,6 +144,6 @@ export default function ConfirmMemberComponent() {
           <StandardButton title="결제하기" backgroundColor={isActive ? "#191970" : "white"} color={isActive ? "white" : "black"} onClick={goToPayHandler} height={64} />
         </ButtonBox>
       </ButtonContainer>
-    </>
+    </PageWrapper>
   );
 }
