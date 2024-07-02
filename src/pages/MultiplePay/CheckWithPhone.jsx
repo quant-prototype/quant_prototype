@@ -102,7 +102,7 @@ function GroupPw(){
     </ImageWrapper>
 
     <ComponentContainer>
-      <Title>우리 동아리 회비의<br/>비밀번호를 입력해주세요.</Title>
+      <Title>배드민턴 동아리 회비의<br/>비밀번호를 입력해주세요.</Title>
       <PwContainer>
         {activeDots.map((active, index) => <Dot key={index} active={active} />)}
       </PwContainer>

@@ -40,7 +40,7 @@ function GroupPayComponent(){
   return(
     <PageWrapper>
         <HeaderComponent back={handleBackButtonClick}/>
-        <Title>우리 동아리 회비를<br/>사용하시겠습니까?</Title>
+        <Title>배드민턴 동아리 회비를<br/>사용하시겠습니까?</Title>
         <PositionBox>
             <ButtonBox>
             <StandardButton title="사용하기" backgroundColor="#191970" color="#FFFFFF" height="64px" onClick={handleTrueButtonClick}/>

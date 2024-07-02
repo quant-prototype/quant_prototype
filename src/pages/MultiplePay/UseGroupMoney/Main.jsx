@@ -90,7 +90,7 @@ function Main (){
     return(
         <PageWrapper>
         <BackButton src={backImg} alt="backImg" onClick={()=>navigate(-1)} />
-        <TitleText>우리 동아리의 회비는 500,000원이 남았습니다. 얼마를 사용하시겠습니까?</TitleText>
+        <TitleText>배드민턴 동아리의 회비는 500,000원이 남았습니다. 얼마를 사용하시겠습니까?</TitleText>
 
         <Center>
         <InputContainer>
