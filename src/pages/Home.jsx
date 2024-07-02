@@ -206,6 +206,10 @@ left: 147px;
 cursor: pointer;
 `
 
+const Space=styled.div`
+margin-top: 12px;
+`
+
 function Home() {
 
   const [homeIconSrc, setHomeIconSrc] = useState(homeGray); 
@@ -244,10 +248,10 @@ function Home() {
           <ContentContainer>
             <GroupContent>
               <GroupContentContainer>
-                <GroupName>어니스트 섀클턴</GroupName>
+                <GroupName>배드민턴 동아리</GroupName>
                 <GroupCnt>4명</GroupCnt>
               </GroupContentContainer>
-              <StandardButton title='정산' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px' onClick={handleGroupButtonClick}/>
+              <Space><StandardButton title='정산' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px' onClick={handleGroupButtonClick}/></Space>
             </GroupContent>
 
             <GroupContent style={{width: "93px", borderTopRightRadius:"0px", borderBottomRightRadius:"0px"}}>
@@ -267,7 +271,7 @@ function Home() {
             <SpendTitle>6월에 김하나님이 정산으로 사용한 돈이에요.</SpendTitle>
             <Money>292,033 원</Money>
           </DetailContainer>
-          <StandardButton title='내역' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px'/>
+          <Space><StandardButton title='내역' backgroundColor='#B4B4E7' color='black' width='43px' height='24px' fontSize='10px'/></Space>
         </SpendContent>
 
         <PlusButton src={plusButton} onClick={handlePlusButtonClick}/>

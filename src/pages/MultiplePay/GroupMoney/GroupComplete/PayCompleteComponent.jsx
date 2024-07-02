@@ -52,7 +52,7 @@ export default function PayCompleteComponent() {
         alt="Notification"
         visible={isNotificationVisible}
       />
-          <PayAmountComponent payAmount={310000} memberCount={10} />
+          <PayAmountComponent payAmount={210000} memberCount={10} />
           <ButtonContainer>
             <StandardButton
               title="홈 화면으로 이동하기"
