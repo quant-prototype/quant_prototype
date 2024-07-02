@@ -6,11 +6,12 @@ import ConfirmMember from "./pages/PayConfirmProcedure/ConfirmMember/ConfirmMemb
 import QRPay from "./pages/QRpay/QRPay";
 import PayComplete from "./pages/PayComplete/PayComplete";
 import AddWithRadar from "./pages/SinglePay/AddWithRadar/AddWithRadar";
-import GroupPay from "./pages/MultiplePay/GroupMoney/AskGroupMoney";
+import AskGroupPay from "./pages/MultiplePay/GroupMoney/AskGroupMoney"
 import AddMemberByPhoneNumber from "./pages/AddMemberByPhoneNumber/AddMemberByPhoneNumber";
 import GroupQRPay from "./pages/MultiplePay/GroupQRpay/GroupQRPay";
 import SelectGroupMember from "./pages/SelectGroupMember/SelectGroupMember";
 import GroupPayComplete from "./pages/MultiplePay/GroupMoney/GroupComplete/PayComplete";
+import UseGroupMoney from "./pages/MultiplePay/UseGroupMoney/UseGroupMoney";
 
 
 const Wrapper = styled.div`
@@ -35,9 +36,9 @@ function App() {
           <Route path="/pay" element={<QRPay />} />
           <Route path="/payComplete" element={<PayComplete />} />
           <Route path="/radar" element={<AddWithRadar/>}/>
-          <Route path="/askGroupPay" element={<GroupPay/>}/>
+          <Route path="/useGroupMoney" element={<UseGroupMoney/>}/>
           <Route path="/selectGroupMember" element={<SelectGroupMember />} />
-          <Route path="/askGroupPay" element={<GroupPay/>}/>
+          <Route path="/askGroupPay" element={<AskGroupPay/>}/>
           <Route path="/groupQr" element={<GroupQRPay/>}/>
           <Route path="groupPayComplete" element={<GroupPayComplete/>}/>
         </Routes>

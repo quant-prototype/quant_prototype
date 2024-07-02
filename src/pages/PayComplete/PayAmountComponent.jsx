@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const PayCompleteText = styled.p`
   font-size: 25px;
-  font-weight: Bold;
+  font-weight: 500;
   font-family: "Pretendard", sans-serif;
   color: black;
   line-height: 1.4;
