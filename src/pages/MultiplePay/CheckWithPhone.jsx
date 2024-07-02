@@ -45,7 +45,7 @@ const Dot = styled.div`
   width: 17px;
   height: 17px;
   border-radius: 50%;
-  background-color: ${(props) => props.active ? '#494949' : '#D9D9D9'};
+  background-color: ${(props) => props.active ?  '#D9D9D9' : '#494949'};
 `;
 
 const PwContainer = styled.div`
