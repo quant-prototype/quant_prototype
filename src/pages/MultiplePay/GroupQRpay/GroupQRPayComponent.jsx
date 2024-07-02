@@ -3,6 +3,7 @@ import styled from "styled-components";
 import qr from '../../../assets/payQrImg.svg';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PageWrapper from '../../../style/PageWrapper';
 
 const Logo = styled.img`
 width : 89px;
@@ -40,11 +41,11 @@ function GroupQRPayComponent(){
 
 
     return(
-    <>
+    <PageWrapper>
     <Logo src={logo}></Logo>
     <Content>생성된 QR을 점원에게 보여주세요.</Content>
     <Code src={qr}></Code>
-    </>
+    </PageWrapper>
     );
 }
 

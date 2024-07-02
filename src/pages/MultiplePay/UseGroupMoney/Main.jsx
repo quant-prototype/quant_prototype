@@ -4,6 +4,7 @@ import StandardButton from "../../../shared/StandardButton";
 import { styled } from 'styled-components'
 import backImg from "../../../assets/backImg.svg";
 import { useEffect, useState } from "react";
+import PageWrapper from "../../../style/PageWrapper";
 
 const BackButton = styled.img`
   margin-top: 11.82px;
@@ -87,7 +88,7 @@ function Main (){
     },[targetText])
 
     return(
-        <>
+        <PageWrapper>
         <BackButton src={backImg} alt="backImg" onClick={()=>navigate(-1)} />
         <TitleText>우리 동아리의 회비는 310,000원이 남았습니다. 얼마를 사용하시겠습니까?</TitleText>
 
@@ -117,7 +118,7 @@ function Main (){
         }}>
         <StandardButton title='결제하기' height='64px' width='347px' backgroundColor = {targetText !== '' ? '#191970': 'white'} color = {targetText !== '' ? 'white': 'black'} onClick={handleButtonClick} />
         </div>
-        </>
+        </PageWrapper>
     )
 }
 export default Main;

@@ -2,6 +2,7 @@ import HeaderComponent from "../../PayConfirmProcedure/PayConfirmComponent/Heade
 import styled from "styled-components";
 import StandardButton from "../../../shared/StandardButton";
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../../../style/PageWrapper";
 
 
 const Title = styled.div`
@@ -37,7 +38,7 @@ function GroupPayComponent(){
     const handleBackButtonClick=()=>(navigate('/selectGroupMember'))
 
   return(
-    <>
+    <PageWrapper>
         <HeaderComponent back={handleBackButtonClick}/>
         <Title>우리 동아리 회비를<br/>사용하시겠습니까?</Title>
         <PositionBox>
@@ -46,7 +47,7 @@ function GroupPayComponent(){
             <StandardButton title="사용하지 않기" backgroundColor="white" color="black" height="64px" onClick={handleFalseButtonClick}/>
             </ButtonBox>
         </PositionBox>
-    </>
+    </PageWrapper>
   );
 }
 

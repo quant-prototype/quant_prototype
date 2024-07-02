@@ -4,6 +4,7 @@ import PayAmountComponent from "./PayAmountComponent";
 import StandardButton from "../../../../shared/StandardButton";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../../../../style/PageWrapper";
 
 const ButtonContainer = styled.div`
   position: fixed;
@@ -16,13 +17,13 @@ const ButtonContainer = styled.div`
 const NotificationContent = styled.img`
   background: #dddfdf;
   border-radius : 26px;
-  margin-left: 10px;
-  margin-right: 10px;
+  // margin-left: 10px;
+  // margin-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
   position: fixed;
-  top: ${(props) => (props.visible ? "65px" : "-100px")};
-  left: 49.4%;
+  top: ${(props) => (props.visible ? 0 : "-100px")};
+  left: 50%;
   transform: translateX(-50%);
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -45,7 +46,7 @@ export default function PayCompleteComponent() {
   }, []);
 
   return (
-        <>
+        <PageWrapper>
           <NotificationContent
         src={notificationImg}
         alt="Notification"
@@ -61,6 +62,6 @@ export default function PayCompleteComponent() {
               onClick={handleButtonClick}
             />
           </ButtonContainer>
-    </>
+    </PageWrapper>
   );
 }

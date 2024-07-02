@@ -4,6 +4,7 @@ import ProfileInfo from "../PayConfirmProcedure/PayConfirmComponent/ProfileInfo"
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import StandardButton from "../../shared/StandardButton";
+import PageWrapper from "../../style/PageWrapper";
 
 const NumberInputContainer = styled.div`
   margin: 0 auto;
@@ -153,7 +154,7 @@ export default function AddMemberByPhoneNumberComponent() {
   }
 
   return (
-    <>
+    <PageWrapper>
       <HeaderComponent
         title="전화번호를 입력해서 추가해주세요."
         back={goBackHandler}
@@ -200,6 +201,6 @@ export default function AddMemberByPhoneNumberComponent() {
           onClick={addMemberHandler}
         />
       </ButtonContainer>
-    </>
+    </PageWrapper>
   );
 }
