@@ -39,6 +39,7 @@ const AddMoreMemberText = styled.p`
   color: #888888;
   border-bottom: 1px solid #A8A8A8;
   margin: 0 auto;
+  cursor: pointer;
 `
 
 const ButtonContainer = styled.div`
@@ -63,19 +64,19 @@ const ButtonBox = styled.div`
 export default function ConfirmMemberComponent() {
   const [profileInfo, setProfileInfo] = useState([
     {
-      name: "이하나",
+      name: "김건우",
       phone: "010-1234-5678",
       selected: false,
     }, {
-      name: "김하나",
+      name: "김지은",
       phone: "010-1234-5678",
       selected: false,
     }, {
-      name: "박하나",
+      name: "박제준",
       phone: "010-1234-5678",
       selected: false,
     }, {
-      name: "강하나",
+      name: "이세은",
       phone: "010-1234-5678",
       selected: false,
     }
@@ -113,7 +114,7 @@ export default function ConfirmMemberComponent() {
 
   const goToPayHandler = () => {
     if(profileInfo.some((info) => info.selected === true)) {
-      navigate("/payComplete");
+      navigate("/pay");
     }
   }
 

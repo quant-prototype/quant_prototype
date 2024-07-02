@@ -1,10 +1,11 @@
-import BackwardBtn from '../../../assets/backWardBtn.png'
+import BackwardBtn from '../../../assets/backImg.svg'
 import logoForRadar from '../../../assets/logoForRadar.png'
 import profileOnRadar from '../../../assets/profileOnRadar.svg'
 import { styled, keyframes } from 'styled-components'
 import StandardButton from '../../../shared/StandardButton'
 import profileClicked from '../../../assets/profileClicked.svg'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const borderColorAnimation = keyframes`
   0% {
@@ -97,13 +98,23 @@ color: #888888;
 font-size: 15;
 font-weight: 350;
 margin-top: 27px;
+cursor: Pointer;
+`
+
+const Back = styled.img`
+cursor: pointer;
 `
 
 function Main(){
+
+    const navigate = useNavigate();
+    const handleButtonClick = () => {navigate('/confirmmember');};
+    const handleBackButtonClick = () => {navigate('/');};
+
     return(
         <>
         <TopLayout>
-            <img src={BackwardBtn} style={{marginBottom: 24.62}}/>
+            <Back src={BackwardBtn} style={{marginBottom: 24.62, width: "21px", height: "18.38px"}} onClick={handleBackButtonClick}/>
             <Title>정산에 포함할 인원을</Title>
             <Title>추가해주세요.</Title>
                 
@@ -116,9 +127,9 @@ function Main(){
                     <ProfileContainer name='김x우' top='-20px' left= '90px '/>
 
                         <SmallCircle>
-                            <ProfileContainer name='김x우' top='-10px' left= '20px '/>
-                            <ProfileContainer name='김x우' top='-40px' left= '2o155px '/>
-                            <ProfileContainer name='김x우' top='100px' left= '210px '/>
+                            <ProfileContainer name='이x은' top='-10px' left= '20px '/>
+                            <ProfileContainer name='김x은' top='-40px' left= '2o155px '/>
+                            <ProfileContainer name='박x준' top='100px' left= '210px '/>
 
                             <img src={logoForRadar}></img>
 
@@ -132,7 +143,7 @@ function Main(){
         <Center>
             <SubTitle>추가되지 않은 인원이 있어요</SubTitle>
         
-            <StandardButton title='선택 인원 추가하기' height='64px' width='384px' backgroundColor = 'white' color = 'black' />
+            <StandardButton title='선택 인원 추가하기' height='64px' width='384px' backgroundColor = 'white' color = 'black' onClick={handleButtonClick} />
         </Center>   
 
         </>
@@ -164,6 +175,7 @@ width: 48px;
 height: 48px;
 top: 0px;
 left: 0px;
+cursor: pointer;
 `
 
 const Name = styled.div`

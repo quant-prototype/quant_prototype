@@ -47,6 +47,7 @@ const SelectButton = styled.div`
   height: 23.54px;
   background-color: ${({ selected }) => (selected ? "#2A2ABB" : "transparent")};
   border: 2px solid #2a2abb;
+  cursor: pointer;
 `;
 
 export default function ProfileInfo({index, info, selectHandler}) {

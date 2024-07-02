@@ -5,10 +5,11 @@ import Home from "./pages/Home";
 import ConfirmMember from "./pages/PayConfirmProcedure/ConfirmMember/ConfirmMember";
 import QRPay from "./pages/QRpay/QRPay";
 import PayComplete from "./pages/PayComplete/PayComplete";
+import AddWithRadar from "./pages/SinglePay/AddWithRadar/AddWithRadar";
 
 const Wrapper = styled.div`
-  margin: 0 auto; /* 가운데 정렬 */
-  min-width: 430px; /* 전체 너비 */
+  margin: 0 auto; 
+  min-width: 430px; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +27,7 @@ function App() {
           <Route path="/confirmMember" element={<ConfirmMember />} />
           <Route path="/pay" element={<QRPay />} />
           <Route path="/payComplete" element={<PayComplete />} />
+          <Route path="/radar" element={<AddWithRadar/>}/>
         </Routes>
       </Wrapper>
     </>

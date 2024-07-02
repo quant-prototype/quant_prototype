@@ -13,6 +13,7 @@ import plusButton from '../assets/mainPlus.svg';
 import blueHome from '../assets/blueHome.svg';
 import blueGroup from '../assets/blueGroup.svg';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
 const ImageWrapper = styled.div`
 width: 430px;
@@ -210,6 +211,11 @@ function Home() {
   const [homeIconSrc, setHomeIconSrc] = useState(homeGray); 
   const [groupIconSrc, setGroupIconSrc] = useState(groupGray);
 
+  const navigate = useNavigate();
+  const handlePlusButtonClick = () => {
+    navigate('/Radar');
+  };
+
   return(
     <>
         <ImageWrapper style={{background: "#191970"}}>
@@ -261,7 +267,7 @@ function Home() {
           <StandardButton title='내역' backgroundColor='#B4B4E7' color='black' width='43px' height='24px'/>
         </SpendContent>
 
-        <PlusButton src={plusButton}/>
+        <PlusButton src={plusButton} onClick={handlePlusButtonClick}/>
 
         <Nav>
           <HomeIcon src={homeIconSrc}

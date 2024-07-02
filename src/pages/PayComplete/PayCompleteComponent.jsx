@@ -3,6 +3,7 @@ import notificationImg from "../../assets/Notification.svg";
 import PayAmountComponent from "./PayAmountComponent";
 import StandardButton from "../../shared/StandardButton";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ButtonContainer = styled.div`
   position: fixed;
@@ -28,8 +29,12 @@ const NotificationContent = styled.img`
 `
 
 export default function PayCompleteComponent() {
-
+  const navigate = useNavigate();
+  const handleButtonClick=()=>{
+    navigate('/');
+  }
   const [isNotificationVisible, setNotificationVisible] = useState(false);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,6 +58,7 @@ export default function PayCompleteComponent() {
               width={347}
               height={64}
               backgroundColor="#191970"
+              onClick={handleButtonClick}
             />
           </ButtonContainer>
     </>
