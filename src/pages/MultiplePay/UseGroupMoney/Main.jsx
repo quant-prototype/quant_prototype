@@ -74,7 +74,7 @@ function Main (){
     const [isTextCorrect, setIsTextCorrect] = useState(false)
 
     function handleIsTextCorrect(){
-      if(targetText === '25000'){
+      if(targetText === '100000'){
         setIsTextCorrect(true)
       }
     }
@@ -90,7 +90,7 @@ function Main (){
     return(
         <PageWrapper>
         <BackButton src={backImg} alt="backImg" onClick={()=>navigate(-1)} />
-        <TitleText>우리 동아리의 회비는 310,000원이 남았습니다. 얼마를 사용하시겠습니까?</TitleText>
+        <TitleText>우리 동아리의 회비는 500,000원이 남았습니다. 얼마를 사용하시겠습니까?</TitleText>
 
         <Center>
         <InputContainer>
@@ -105,8 +105,8 @@ function Main (){
           <SubText>
             <div>거래후 잔액</div>
             {isTextCorrect ? (
-              <div>285,000원</div>
-            ): <div>310,000원</div>}
+              <div>400,000원</div>
+            ): <div>500,000원</div>}
           </SubText>
         </Center>
 
