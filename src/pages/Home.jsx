@@ -1,3 +1,4 @@
+
 import React from 'react';
 import statusBar from '../assets/whiteStatusBar.svg';
 import indicator from '../assets/indicator.png';
@@ -209,7 +210,7 @@ function Home() {
   const [homeIconSrc, setHomeIconSrc] = useState(homeGray); 
   const [groupIconSrc, setGroupIconSrc] = useState(groupGray);
 
-  return (
+  return(
     <>
         <ImageWrapper style={{background: "#191970"}}>
             <Img src={statusBar} style={{background: "#191970"}}/>
@@ -277,7 +278,8 @@ function Home() {
             <Img src={indicator} />
         </IndicatorWrapper>
       </>
-  );
+    );
 }
 
 export default Home;
+

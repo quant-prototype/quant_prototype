@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Routes, Route } from "react-router-dom";
 import { GlobalStyle } from "./style/globalStyle";
 import Home from "./pages/Home";
+import ConfirmMember from "./pages/PayConfirmProcedure/ConfirmMember/ConfirmMember";
+import QRPay from "./pages/QRpay/QRPay";
 
 const Wrapper = styled.div`
   margin: 0 auto; /* 가운데 정렬 */
@@ -20,6 +22,8 @@ function App() {
       <Wrapper>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/confirmMember" element={<ConfirmMember />} />
+          <Route path="/pay" element={<QRPay />} />
         </Routes>
       </Wrapper>
     </>
