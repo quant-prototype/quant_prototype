@@ -16,6 +16,9 @@ const TitleText = styled.p`
   margin-top: 24.63px;
   font-weight: 600;
   font-family: "Pretendard", sans-serif;
+  // white-space: pre-wrap;
+  width: 220px;
+  line-height: 40px;
 `;
 
 export default function HeaderComponent({title, back}) {
