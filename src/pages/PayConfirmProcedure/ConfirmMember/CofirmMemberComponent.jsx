@@ -1,25 +1,9 @@
 import styled from "styled-components";
-import backImg from "../../../assets/backImg.svg";
-import profileImg from "../../../assets/profile.svg";
 import StandardButton from "../../../shared/StandardButton.jsx";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
-const BackButton = styled.img`
-  margin-top: 11.82px;
-  margin-left: 43px;
-  width: 21px;
-  height: 18.38px;
-`;
-
-const TitleText = styled.p`
-  color: black;
-  font-size: 25px;
-  margin-left: 43px;
-  margin-top: 24.63px;
-  font-weight: 600;
-  font-family: "Pretendard", sans-serif;
-`;
+import HeaderComponent from "../PayConfirmComponent/HeaderComponent.jsx";
+import ProfileInfo from "../PayConfirmComponent/ProfileInfo.jsx";
 
 const MemberCountContainer = styled.div`
   display: flex;
@@ -46,53 +30,6 @@ const SelectAllButton = styled.button`
   color: black;
   font-size: 10px;
   font-weight: 400;
-`;
-
-const MemberContainer = styled.div`
-  display: flex;
-  width: 90%;
-  margin-top: 14px;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const ProfileContainer = styled.div`
-  display: flex;
-`;
-
-const ProfileImg = styled.img`
-  margin-left: 43px;
-`;
-
-const ProfileDetailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-left: 7px;
-  // align-items: center;
-  justify-content: center;
-`;
-
-const NameText = styled.p`
-  color: black;
-  font-size: 12px;
-  font-weight: Medium;
-  font-family: "Pretendard", sans-serif;
-`;
-
-const PhoneNumber = styled.p`
-  color: #888888;
-  font-size: 12px;
-  font-weight: Medium;
-  font-family: "Pretendard", sans-serif;
-`;
-
-const SelectButton = styled.div`
-  border-radius: 50%;
-  width: 23.54px;
-  height: 23.54px;
-  background-color: ${({ selected }) => (selected ? "#2A2ABB" : "transparent")};
-  border: 2px solid #2a2abb;
 `;
 
 const AddMoreMemberText = styled.p`
@@ -161,6 +98,12 @@ export default function ConfirmMemberComponent() {
     );
   }
 
+  const deleteMemberHandler = () => {
+    setProfileInfo((prevInfo) => {
+      return prevInfo.filter((info) => info.selected !== true);
+    })
+  }
+
 
   const navigate = useNavigate();
 
@@ -168,33 +111,29 @@ export default function ConfirmMemberComponent() {
     navigate(-1);
   };
 
+  const goToPayHandler = () => {
+    if(profileInfo.some((info) => info.selected === true)) {
+      navigate("/payComplete");
+    }
+  }
+
   return (
     <>
-      <BackButton src={backImg} alt="backImg" onClick={goBackHandler} />
-      <TitleText>아래의 인원이 맞나요?</TitleText>
+      <HeaderComponent title="아래의 인원이 맞나요?" back={goBackHandler} />
       <MemberCountContainer>
         <MemberCountText>총 {profileInfo.length}명</MemberCountText>
         <SelectAllButton onClick={selectAllHandler}>전체 선택하기</SelectAllButton>
       </MemberCountContainer>
       {profileInfo.map((info, index) => {
         return (
-          <MemberContainer key={index}>
-            <ProfileContainer>
-              <ProfileImg src={profileImg} alt="profileImg" />
-              <ProfileDetailContainer>
-                <NameText>{info.name}</NameText>
-                <PhoneNumber>{info.phone}</PhoneNumber>
-              </ProfileDetailContainer>
-            </ProfileContainer>
-            <SelectButton selected={info.selected} onClick={() => selectHandler(index)} />
-          </MemberContainer>
+          <ProfileInfo key={index} info={info} index={index} selectHandler={selectHandler} />
         );
       })}
       <ButtonContainer>
         <AddMoreMemberText>추가되지 않은 인원이 있어요</AddMoreMemberText>
         <ButtonBox>
-          <StandardButton title="결제하기" backgroundColor="white" color="black" />
-          <StandardButton title="선택 인원 삭제하기" backgroundColor="white" color="black" />
+          <StandardButton title="결제하기" backgroundColor="white" color="black" onClick={goToPayHandler} />
+          <StandardButton title="선택 인원 삭제하기" backgroundColor="white" color="black" onClick={deleteMemberHandler} />
         </ButtonBox>
       </ButtonContainer>
     </>
