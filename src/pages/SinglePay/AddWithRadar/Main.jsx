@@ -3,6 +3,7 @@ import logoForRadar from '../../../assets/logoForRadar.png'
 import profileOnRadar from '../../../assets/profileOnRadar.svg'
 import { styled, keyframes } from 'styled-components'
 import StandardButton from '../../../shared/StandardButton'
+import HeaderComponent from '../../PayConfirmProcedure/PayConfirmComponent/HeaderComponent'
 import profileClicked from '../../../assets/profileClicked.svg'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -52,6 +53,7 @@ justify-content: center;
 align-items: center;
 padding-top: 20px;
 overflow: hidden;
+margin-top: 36px;
 `
 
 const BigCircle = styled.div`
@@ -74,7 +76,7 @@ height: 389px;
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1.5px solid #9F9F9F;
+border: 2px solid #9F9F9F;
 background-color: transparent;
 border-radius: 50%;
 animation: ${borderColorAnimation} 2s ease-in-out infinite;
@@ -87,7 +89,7 @@ height: 237px;
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1.5px solid #9F9F9F;
+border: 2px solid #9F9F9F;
 background-color: transparent;
 border-radius: 50%;
 animation: ${borderColorAnimation} 2s ease-in-out infinite;
@@ -101,24 +103,15 @@ margin-top: 27px;
 cursor: Pointer;
 `
 
-const Back = styled.img`
-cursor: pointer;
-`
-
 function Main(){
 
     const navigate = useNavigate();
-    const handleButtonClick = () => {navigate('/confirmmember');};
-    const handleBackButtonClick = () => {navigate('/');};
+    const handleButtonClick = () => {navigate('/confirmmember')};
+    const handleBackButtonClick = () => {navigate('/')};
 
     return(
         <>
-        <TopLayout>
-            <Back src={BackwardBtn} style={{marginBottom: 24.62, width: "21px", height: "18.38px"}} onClick={handleBackButtonClick}/>
-            <Title>정산에 포함할 인원을</Title>
-            <Title>추가해주세요.</Title>
-                
-        </TopLayout>
+            <HeaderComponent title="정산에 포함할 인원을 추가해주세요." back={handleBackButtonClick} />
 
             <RadarLayout>
                 {/* <BigCircle> */}
