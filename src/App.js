@@ -8,6 +8,7 @@ import PayComplete from "./pages/PayComplete/PayComplete";
 import AddWithRadar from "./pages/SinglePay/AddWithRadar/AddWithRadar";
 import GroupPay from "./pages/MultiplePay/GroupMoney/AskGroupMoney";
 import AddMemberByPhoneNumber from "./pages/AddMemberByPhoneNumber/AddMemberByPhoneNumber";
+import SelectGroupMember from "./pages/SelectGroupMember/SelectGroupMember";
 
 const Wrapper = styled.div`
   margin: 0 auto; 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/payComplete" element={<PayComplete />} />
           <Route path="/radar" element={<AddWithRadar/>}/>
           <Route path="/askGroupPay" element={<GroupPay/>}/>
+          <Route path="/selectGroupMember" element={<SelectGroupMember />} />
         </Routes>
       </Wrapper>
     </>
