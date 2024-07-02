@@ -1,6 +1,7 @@
 import HeaderComponent from "../../PayConfirmProcedure/PayConfirmComponent/HeaderComponent";
 import styled from "styled-components";
 import StandardButton from "../../../shared/StandardButton";
+import { useNavigate } from "react-router-dom";
 
 
 const Title = styled.div`
@@ -29,6 +30,10 @@ position: fixed;
 `
 
 function GroupPayComponent(){
+
+    const navigate = useNavigate();
+    const handleFalseButtonClick=()=>{navigate('/pay')}
+
   return(
     <>
         <HeaderComponent/>
@@ -36,7 +41,7 @@ function GroupPayComponent(){
         <PositionBox>
             <ButtonBox>
             <StandardButton title="사용하기" backgroundColor="#191970" color="#FFFFFF" height="64px"/>
-            <StandardButton title="사용하지 않기" backgroundColor="white" color="black" height="64px"/>
+            <StandardButton title="사용하지 않기" backgroundColor="white" color="black" height="64px" onClick={handleFalseButtonClick}/>
             </ButtonBox>
         </PositionBox>
     </>
