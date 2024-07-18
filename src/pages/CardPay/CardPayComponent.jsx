@@ -1,5 +1,5 @@
 import logo from "../../assets/payLogo.svg";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import qr from "../../assets/payQrImg.svg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -57,6 +57,15 @@ const Overlay = styled.div`
   z-index: 10;
 `;
 
+const slideUp = keyframes`
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+`;
+
 const Modal = styled.div`
   background-color: white;
   z-index: 100;
@@ -70,6 +79,7 @@ const Modal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: ${slideUp} 0.5s ease-out;
 `;
 
 const ModalStatusBar = styled.div`
