@@ -118,7 +118,7 @@ export default function ConfirmMemberComponent() {
 
   const goToPayHandler = () => {
     if(profileInfo.some((info) => info.selected === true)) {
-      navigate("/pay");
+      navigate("/cardpay");
     }
   }
 
